@@ -3,10 +3,12 @@ require("dotenv").config();
 const express = require("express");
 const pool = require("./db");
 const employeeRoutes = require("./routes/employeeRoutes");
+const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
 app.use(express.json());
+app.use(errorHandler);
 
 app.get("/", (req, res) => {
     res.json({
@@ -30,8 +32,13 @@ async function testDatabaseConnection() {
 
 testDatabaseConnection();
 
+
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
