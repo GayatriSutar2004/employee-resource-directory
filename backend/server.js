@@ -1,11 +1,13 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors");
 const pool = require("./db");
 const employeeRoutes = require("./routes/employeeRoutes");
 const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 app.use(errorHandler);
