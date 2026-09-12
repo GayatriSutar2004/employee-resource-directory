@@ -18,6 +18,24 @@ A full-stack Employee Resource Directory built using React, Node.js, Express, an
 * Loading and error states in the frontend
 * Backend API test using Jest and Supertest
 * Frontend test using React Testing Library and Jest
+# Employee Resource Directory
+
+A full-stack Employee Resource Directory built using React, Node.js, Express, and MySQL.
+
+## Screenshots
+
+### Employee Directory
+
+![Employee Directory](./Screenshot%202026-09-12%20225305.png)
+
+### Employee Form and Manager Assignment
+
+![Employee Form](./Screenshot%202026-09-12%20225313.png)
+
+## Features
+
+- Create employees
+- View all employees
 
 ## Tech Stack
 
